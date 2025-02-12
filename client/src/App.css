@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: var(--neutralColor);
+}
+
 @font-face {
   font-family: "Atkinson Hyperlegible";
   src: url(../src/assets/fonts/Atkinson_Hyperlegible/AtkinsonHyperlegible-Regular.ttf)
