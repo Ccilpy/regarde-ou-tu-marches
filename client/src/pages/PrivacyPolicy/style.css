@@ -1,0 +1,44 @@
+.policy-title {
+  font-family: var(--titleFont);
+  text-align: center;
+  padding: 1rem;
+  color: var(--primaryColor);
+  font-size: 2rem;
+}
+
+.privacy-policy {
+  margin-bottom: 2rem;
+}
+
+.policy-title::after {
+  content: "";
+  display: block;
+  margin-top: 0.5rem;
+  width: 10%;
+  border-top: 3px solid var(--primaryColor);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.privacy-paragraphe {
+  font-family: var(--textFont);
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  color: var(--primaryColor);
+}
+
+.privacy-ul {
+  font-family: var(--textFont);
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin-left: 5rem;
+  margin-right: 2rem;
+  color: var(--primaryColor);
+}
+
+.link-mail {
+  text-decoration: none;
+  color: var(--primaryColor);
+}
