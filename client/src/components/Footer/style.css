@@ -1,0 +1,38 @@
+footer {
+  background-color: var(--primaryColor);
+  height: 15rem;
+  display: flex;
+  align-items: center;
+}
+
+.footer-links {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  gap: 0.8rem;
+}
+
+.link-footer {
+  text-decoration: none;
+  font-family: var(--titleFont);
+  color: var(--secondaryColor);
+  margin: 5rem;
+  font-size: 1.5rem;
+}
+
+.link-footer:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 768px) {
+  footer {
+    height: auto;
+    padding: 2rem;
+  }
+
+  .link-footer {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+  }
+}
