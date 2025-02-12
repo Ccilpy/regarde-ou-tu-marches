@@ -1,21 +1,17 @@
-create table user (
-  id int unsigned primary key auto_increment not null,
-  email varchar(255) not null unique,
-  password varchar(255) not null
+CREATE TABLE suit (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL
 );
 
-create table item (
-  id int unsigned primary key auto_increment not null,
-  title varchar(255) not null,
-  user_id int unsigned not null,
-  foreign key(user_id) references user(id)
+CREATE TABLE card (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    username VARCHAR(255) NOT NULL,
+    mail VARCHAR(255) NOT NULL,
+    card_rank VARCHAR(50) NOT NULL,
+    picture_url TEXT NOT NULL,
+    found_date DATE NOT NULL,
+    location VARCHAR(255) NOT NULL,
+    description TEXT NOT NULL,
+    suit_id INT NOT NULL,
+    FOREIGN KEY (suit_id) REFERENCES suit(id) ON DELETE CASCADE
 );
-
-insert into user(id, email, password)
-values
-  (1, "jdoe@mail.com", "123456");
-
-insert into item(id, title, user_id)
-values
-  (1, "Stuff", 1),
-  (2, "Doodads", 1);
