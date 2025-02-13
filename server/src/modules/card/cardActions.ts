@@ -4,7 +4,6 @@ import cardRepository from "./cardRepository";
 const browse: RequestHandler = async (req, res, next) => {
   try {
     const cards = await cardRepository.readAll();
-
     res.json(cards);
   } catch (err) {
     next(err);
@@ -14,7 +13,6 @@ const browse: RequestHandler = async (req, res, next) => {
 const read: RequestHandler = async (req, res, next) => {
   try {
     const cardId = +req.params.id;
-
     if (cardId <= 0) {
       res.status(400).json({ error: "ID invalide." });
       return;
@@ -51,7 +49,7 @@ const add: RequestHandler = async (req, res, next) => {
       location,
       description,
       suit_id,
-    } = req.body || {};
+    } = req.body;
 
     if (
       !username ||
@@ -65,11 +63,22 @@ const add: RequestHandler = async (req, res, next) => {
       res
         .status(400)
         .json({ error: "Tous les champs obligatoires doivent être remplis." });
+      return;
     }
 
-    const insertId = await cardRepository.create(req.body);
+    const existingCard = await cardRepository.findByRankAndSuit(
+      card_rank,
+      suit_id,
+    );
+    if (existingCard) {
+      res.status(400).json({
+        error: `La carte ${card_rank} de cette couleur existe déjà. Merci de rejouer une autre fois !`,
+      });
+      return;
+    }
 
-    res.status(201).json({ insertId });
+    const newCard = await cardRepository.create(req.body);
+    res.status(201).json(newCard);
   } catch (err) {
     next(err);
   }
