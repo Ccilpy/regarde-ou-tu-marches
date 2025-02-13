@@ -144,6 +144,20 @@ class CardRepository {
       throw new Error(`Erreur lors de la suppression de la carte : ${error}`);
     }
   }
+
+  async findByRankAndSuit(card_rank: string, suit_id: number) {
+    try {
+      const [rows] = await databaseClient.query<Rows>(
+        `SELECT * FROM card 
+        WHERE card_rank = ? AND suit_id = ?`,
+        [card_rank, suit_id],
+      );
+
+      return rows.length > 0 ? rows[0] : null;
+    } catch (error) {
+      throw new Error(`Erreur lors de la vérification des doublons : ${error}`);
+    }
+  }
 }
 
 export default new CardRepository();
