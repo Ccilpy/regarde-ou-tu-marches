@@ -5,6 +5,10 @@
   font-weight: bold;
 }
 
+.section-title {
+  margin: 0 1rem 1rem 0rem;
+}
+
 .home-text,
 .rank-text {
   font-family: var(--textFont);
@@ -18,12 +22,21 @@
   margin: 1.5rem 1rem 2rem 1rem;
 }
 
+.home-paragraph {
+  font-size: 1.5rem;
+  padding: 0.5rem;
+}
+
 .rank-text {
   grid-area: 1 / 2 / 3 / 3;
   text-align: center;
   background-color: var(--primaryColor);
   color: var(--secondaryColor);
   border-radius: 16px;
+  height: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .rank-section {
@@ -32,6 +45,7 @@
 
 .article-title {
   margin: 1rem;
+  font-size: 1.5rem;
 }
 
 .section-title {
@@ -74,11 +88,6 @@
   }
 
   .rank-text {
-    width: 100%;
-    text-align: center;
-    background-color: var(--primaryColor);
-    color: var(--secondaryColor);
-    border-radius: 16px;
     margin-top: 1rem;
   }
 

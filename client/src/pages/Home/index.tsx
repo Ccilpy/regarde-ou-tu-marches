@@ -1,5 +1,5 @@
 import "./style.css";
-import Card from "../../components/Card";
+import CardCarousel from "../../components/Carousel";
 
 export default function Home() {
   return (
@@ -7,20 +7,23 @@ export default function Home() {
       <section className="home-text-container">
         <h1 className="section-title">Regarde où tu marches</h1>
         <article className="home-text">
-          <p>Lorem ipsum dolor sit amet</p>
-          <p>
-            Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-            labore et dolore magna aliqua.
+          <p className="home-paragraph">
+            Regarde où tu marches est un jeu captivant, né d'une simple
+            curiosité : celle d’observer les objets laissés dans les rues. Parmi
+            ces trouvailles inattendues, ce sont les cartes à jouer qui ont
+            particulièrement attiré mon regard… Et si chaque carte retrouvée
+            était le début d’une histoire à raconter ?
           </p>
-          <p>
-            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
-            nisi ut aliquip ex ea commodo consequat.
+
+          <p className="home-paragraph">
+            Rejoins l’aventure en photographiant les cartes que tu croises, où
+            que tu sois, et aide-nous à assembler un jeu de 52 cartes dispersées
+            aux quatre coins du monde.
           </p>
-          <p>
-            Duis aute irure dolor in reprehenderit in voluptate velit esse
-            cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-            cupidatat non proident, sunt in culpa qui officia deserunt mollit
-            anim id est laborum.
+
+          <p className="home-paragraph">
+            L’objectif ? Collectionner ces cartes de manière ludique, imaginer
+            des récits et partager ces petits bouts de monde.
           </p>
         </article>
         <article className="rank-text">
@@ -44,7 +47,7 @@ export default function Home() {
       </section>
       <section className="game-container">
         <h2 className="game-title">Le jeu de cartes</h2>
-        <Card />
+        <CardCarousel />
       </section>
     </>
   );
