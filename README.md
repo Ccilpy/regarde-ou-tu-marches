@@ -365,3 +365,9 @@ Nous accueillons avec plaisir les contributions ! Veuillez suivre ces étapes po
 - Assurez-vous que votre code respecte les standards de codage en exécutant `npm run check` avant de pousser vos modifications.
 - Ajoutez des tests pour toute nouvelle fonctionnalité ou correction de bug.
 - Documentez clairement vos modifications dans la description de la pull request.
+
+#Regarde où tu marches
+Mes Documents
+Wireframes :/client/src/assets/wireframes
+Modèle de données : client/src/assets/modèle_données
+Design : client/src/assets/design
