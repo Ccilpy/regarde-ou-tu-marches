@@ -86,7 +86,18 @@ export default function Game() {
       );
 
       if (!response.ok) {
-        throw new Error("Erreur lors de l'envoi des données.");
+        const errorResponse = await response.json();
+        if (errorResponse.error?.includes("file size")) {
+          setErrorMessage(
+            "L'image est trop lourde. Veuillez télécharger une image plus légère.",
+          );
+        } else {
+          setErrorMessage(
+            "Une erreur est survenue lors de l'envoi des données.",
+          );
+        }
+        setSuccessMessage("");
+        return;
       }
 
       setFormData({

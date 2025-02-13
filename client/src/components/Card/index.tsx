@@ -37,7 +37,7 @@ export default function Card({ card }: CardProps) {
     return `- ${card.card_rank} de ${card.suit_name} -`;
   };
 
-  const imageUrl = `${import.meta.env.VITE_API_URL}/${card.picture_url}`;
+  const imageUrl = `${import.meta.env.VITE_API_URL.replace(/\/$/, "")}/${card.picture_url}`;
 
   return (
     <button
