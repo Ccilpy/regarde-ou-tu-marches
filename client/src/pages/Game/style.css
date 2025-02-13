@@ -1,0 +1,120 @@
+.game-title {
+  font-family: var(--titleFont);
+  color: var(--primaryColor);
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.game-title::after {
+  content: "";
+  display: block;
+  margin-top: 0.5rem;
+  width: 10%;
+  border-top: 3px solid var(--primaryColor);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.text-game {
+  max-width: 800px;
+  margin: 0 auto 3rem auto;
+  text-align: center;
+}
+
+.game-paragraph {
+  font-family: var(--textFont);
+  color: var(--primaryColor);
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+
+.register-game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: var(--primaryColor);
+  border-radius: 16px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 3rem;
+}
+
+.register-game label {
+  font-family: var(--textFont);
+  color: var(--secondaryColor);
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.register-game input,
+.register-game select,
+.register-game textarea {
+  width: 100%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 2px solid var(--secondaryColor);
+  border-radius: 5px;
+  background: var(--neutralColor);
+  outline: none;
+  transition: border-color 0.3s ease-in-out;
+}
+
+.register-game input:focus,
+.register-game select:focus,
+.register-game textarea:focus {
+  border-color: var(--secondaryColor);
+}
+
+.register-img input {
+  cursor: pointer;
+  background: var(--neutralColor);
+  border: none;
+}
+
+.register-game button {
+  margin-top: 1rem;
+  padding: 1rem;
+  background: var(--secondaryColor);
+  color: var(--primaryColor);
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.success-message,
+.error-message {
+  text-align: center;
+  font-family: var(--textFont);
+  color: var(--primaryColor);
+  padding-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+@media screen and (max-width: 768px) {
+  .text-game {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .register-game {
+    max-width: 90%;
+    padding: 1.5rem;
+  }
+
+  .game-paragraph {
+    font-size: 1.3rem;
+  }
+
+  .register-game button {
+    font-size: 1rem;
+  }
+}

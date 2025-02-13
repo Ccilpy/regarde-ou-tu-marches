@@ -1,0 +1,93 @@
+.page-title,
+.history-title,
+.about-title {
+  font-family: var(--titleFont);
+  text-align: center;
+  color: var(--primaryColor);
+  margin: 2rem;
+}
+
+.page-title::after {
+  content: "";
+  display: block;
+  margin-top: 0.5rem;
+  width: 10%;
+  border-top: 3px solid var(--primaryColor);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.history-title,
+.about-title {
+  font-size: 1.8rem;
+}
+
+.game-history {
+  font-family: var(--textFont);
+  color: var(--primaryColor);
+  margin-left: 5rem;
+  margin-right: 5rem;
+  padding: 1rem;
+  font-size: 1.5rem;
+}
+
+.bio {
+  font-family: var(--textFont);
+  color: var(--primaryColor);
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.bio-picture {
+  width: 30rem;
+  margin-left: 5rem;
+  margin-top: 2rem;
+  float: right;
+  margin-right: 2rem;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.about-title {
+  grid-area: 1 / 1 / 2 / 3;
+}
+
+.bio-article {
+  grid-area: 2 / 2 / 3 / 3;
+}
+
+.bio-link {
+  text-decoration: none;
+  color: var(--primaryColor);
+  font-weight: bold;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.img-link {
+  width: 8rem;
+}
+
+@media screen and (max-width: 768px) {
+  .game-history {
+    margin-left: 1rem;
+    margin-right: 1rem;
+  }
+
+  .about-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .bio-picture {
+    float: none;
+    width: 100%;
+    margin: 1rem 0;
+  }
+}

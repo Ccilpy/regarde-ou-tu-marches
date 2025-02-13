@@ -4,6 +4,8 @@ import express from "express";
 
 const app = express();
 
+app.use(express.json());
+
 // Configure it
 
 /* ************************************************************************* */
@@ -121,5 +123,10 @@ const logErrors: ErrorRequestHandler = (err, req, res, next) => {
 app.use(logErrors);
 
 /* ************************************************************************* */
+
+app.use(
+  "/card_uploads",
+  express.static(path.join(__dirname, "../../server/card_uploads")),
+);
 
 export default app;
