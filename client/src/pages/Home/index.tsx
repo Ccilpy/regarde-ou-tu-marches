@@ -5,14 +5,16 @@ export default function Home() {
   return (
     <>
       <section className="home-text-container">
-        <h1 className="section-title">Regarde où tu marches</h1>
+        <h1 className="section-title">
+          Derrière chaque trouvaille, une histoire à découvrir
+        </h1>
         <article className="home-text">
           <p className="home-paragraph">
-            Regarde où tu marches est un jeu captivant, né d'une simple
-            curiosité : celle d’observer les objets laissés dans les rues. Parmi
-            ces trouvailles inattendues, ce sont les cartes à jouer qui ont
-            particulièrement attiré mon regard… Et si chaque carte retrouvée
-            était le début d’une histoire à raconter ?
+            <span className="name-logo">Regarde où tu marches </span>est un jeu
+            captivant, né d'une simple curiosité : celle d’observer les objets
+            laissés dans les rues. Parmi ces trouvailles inattendues, ce sont
+            les cartes à jouer qui ont particulièrement attiré mon regard… Et si
+            chaque carte retrouvée était le début d’une histoire à raconter ?
           </p>
 
           <p className="home-paragraph">

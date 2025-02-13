@@ -34,46 +34,48 @@ export default function About() {
 
       <section className="about-section">
         <h2 className="about-title">Qui suis-je ?</h2>
-        <img
-          src="../src/assets/bio/photo_about.JPG"
-          alt="Cécile"
-          className="bio-picture"
-        />
-        <article className="bio-article">
-          <p className="bio">Moi, c’est Cécile !</p>
-          <p className="bio">
-            Ancienne cheffe de projet dans le secteur culturel, j'ai troqué mes
-            tableaux de bord pour du code et suis devenue développeuse web.
-            Quand je ne suis pas en train de créer des sites, je traque les
-            petits trésors abandonnés dans la rue – boucles d'oreilles,
-            médaillons, cartes à jouer... ou je les capture en photo.
-          </p>
-          <p className="bio">
-            Cinéma, spectacles, web (évidemment), et un soupçon de curiosité
-            pour tout ce qui m'entoure, voilà ce qui m'anime au quotidien.
-          </p>
-          <p className="bio">
-            Retrouvez-moi sur
-            <a
-              href="https://www.linkedin.com/in/cecilepuyol/"
-              target="_blank"
-              rel="noreferrer"
-              className="bio-link"
-            >
-              LinkedIn
-            </a>{" "}
-            et sur{" "}
-            <a
-              href="https://github.com/Ccilpy"
-              target="_blank"
-              rel="noreferrer"
-              className="bio-link"
-            >
-              GitHub
-            </a>
-            !
-          </p>
-        </article>
+        <div className="bio-container">
+          <img
+            src="../src/assets/bio/photo_about.JPG"
+            alt="Cécile"
+            className="bio-picture"
+          />
+          <article className="bio-article">
+            <p className="bio">Moi, c’est Cécile !</p>
+            <p className="bio">
+              Ancienne cheffe de projet dans le secteur culturel, j'ai troqué
+              mes tableaux de bord pour du code et suis devenue développeuse
+              web. Quand je ne suis pas en train de créer des sites, je traque
+              les petits trésors abandonnés dans la rue – boucles d'oreilles,
+              médaillons, cartes à jouer... ou je les capture en photo.
+            </p>
+            <p className="bio">
+              Cinéma, spectacles, web (évidemment), et un soupçon de curiosité
+              pour tout ce qui m'entoure, voilà ce qui m'anime au quotidien.
+            </p>
+            <p className="bio">
+              Retrouvez-moi sur
+              <a
+                href="https://www.linkedin.com/in/cecilepuyol/"
+                target="_blank"
+                rel="noreferrer"
+                className="bio-link"
+              >
+                LinkedIn
+              </a>{" "}
+              et sur{" "}
+              <a
+                href="https://github.com/Ccilpy"
+                target="_blank"
+                rel="noreferrer"
+                className="bio-link"
+              >
+                GitHub
+              </a>
+              !
+            </p>
+          </article>
+        </div>
       </section>
     </>
   );
