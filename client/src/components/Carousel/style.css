@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  margin-bottom: 1.5rem;
   width: 100%;
 }
 
@@ -59,8 +59,9 @@
   .card-grid.desktop-only {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
+    gap: 1rem;
     width: 100%;
+    place-items: center;
   }
 
   .swiper-mobile {
