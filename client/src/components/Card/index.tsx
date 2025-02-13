@@ -1,11 +1,40 @@
 import { useState } from "react";
 import "./style.css";
 
-export default function Card() {
+interface CardProps {
+  card: {
+    username: string;
+    card_rank: string;
+    picture_url: string;
+    found_date: string;
+    location: string;
+    description: string;
+    suit_name: string;
+  };
+}
+
+const formatDate = (dateString: string) => {
+  const date = new Date(dateString);
+  const options: Intl.DateTimeFormatOptions = {
+    day: "2-digit",
+    month: "long",
+    year: "numeric",
+  };
+  return date.toLocaleDateString("fr-FR", options);
+};
+
+export default function Card({ card }: CardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const handleFlip = () => {
     setIsFlipped((prev) => !prev);
+  };
+
+  const renderCardRankAndSuit = () => {
+    if (card.card_rank.toLowerCase() === "joker") {
+      return "- Joker -";
+    }
+    return `- ${card.card_rank} de ${card.suit_name} -`;
   };
 
   return (
@@ -23,24 +52,22 @@ export default function Card() {
       <div className="card-inner">
         <figure className="card-front">
           <img
-            src="../src/assets/cards_pictures/8_de_pique.jpg"
-            alt="8 de pique"
+            src={card.picture_url}
+            alt={card.card_rank}
             className="card_picture"
           />
           <figcaption className="card-description">
-            <p className="card-rank">- 8 de pique -</p>
+            <p className="card-rank">{renderCardRankAndSuit()}</p>
             <p className="location-date">
-              Place St Michel, Bordeaux - 11 juin 2014
+              {card.location} - {formatDate(card.found_date)}
             </p>
           </figcaption>
         </figure>
 
         <section className="card-back">
-          <p className="back-text-top">- 8 de pique -</p>
-          <p className="back-text-author">from Isabelle C.</p>
-          <p className="back-text-bottom">
-            trouvée à angle rue des Faures (devant la pharmacie)
-          </p>
+          <p className="back-text-top">{renderCardRankAndSuit()}</p>
+          <p className="back-text-author">from {card.username}</p>
+          <p className="back-text-bottom">{card.description}</p>
         </section>
       </div>
     </button>
