@@ -124,4 +124,9 @@ app.use(logErrors);
 
 /* ************************************************************************* */
 
+app.use(
+  "/card_uploads",
+  express.static(path.join(__dirname, "../../server/card_uploads")),
+);
+
 export default app;

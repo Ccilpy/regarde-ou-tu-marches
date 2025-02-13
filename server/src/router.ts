@@ -19,8 +19,15 @@ import cardActions from "./modules/card/cardActions";
 
 router.get("/api/cards", cardActions.browse);
 router.get("/api/cards/:id", cardActions.read);
-router.post("/api/cards", cardActions.add);
 router.put("/api/cards/:id", cardActions.edit);
 router.delete("/api/cards/:id", cardActions.destroy);
+router.post(
+  "/api/cards",
+  upload.single("image"),
+  cardActions.uploadImage,
+  cardActions.add,
+);
+
+import upload from "./middlewares/upload";
 
 export default router;
