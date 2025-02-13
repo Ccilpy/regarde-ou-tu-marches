@@ -90,6 +90,15 @@
   cursor: pointer;
 }
 
+.success-message,
+.error-message {
+  text-align: center;
+  font-family: var(--textFont);
+  color: var(--primaryColor);
+  padding-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
 @media screen and (max-width: 768px) {
   .text-game {
     margin-left: 1rem;

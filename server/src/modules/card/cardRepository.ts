@@ -11,14 +11,16 @@ type Card = {
   location: string;
   description: string;
   suit_id: number;
+  suit: string;
 };
 
 class CardRepository {
   async create(card: Omit<Card, "id">) {
     try {
+      const suit_id = card.suit_id ?? null;
       const [result] = await databaseClient.execute<Result>(
         `INSERT INTO card (username, mail, card_rank, picture_url, found_date, location, description, suit_id)
-             VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
+         VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
         [
           card.username,
           card.mail ?? null,
@@ -35,15 +37,7 @@ class CardRepository {
         throw new Error("Échec de l'insertion de la carte.");
       }
 
-      const [rows] = await databaseClient.query<Rows>(
-        `SELECT card.*, suit.name AS suit_name 
-             FROM card 
-             INNER JOIN suit ON card.suit_id = suit.id 
-             WHERE card.id = ?`,
-        [result.insertId],
-      );
-
-      return rows[0] as Card & { suit_name: string };
+      return { id: result.insertId };
     } catch (error) {
       throw new Error(`Erreur lors de la création de la carte : ${error}`);
     }

@@ -37,6 +37,8 @@ export default function Card({ card }: CardProps) {
     return `- ${card.card_rank} de ${card.suit_name} -`;
   };
 
+  const imageUrl = `${import.meta.env.VITE_API_URL}/${card.picture_url}`;
+
   return (
     <button
       type="button"
@@ -48,14 +50,12 @@ export default function Card({ card }: CardProps) {
         }
       }}
       tabIndex={0}
+      aria-pressed={isFlipped}
+      aria-label={`Retourner la carte de ${card.username}`}
     >
       <div className="card-inner">
         <figure className="card-front">
-          <img
-            src={card.picture_url}
-            alt={card.card_rank}
-            className="card_picture"
-          />
+          <img src={imageUrl} alt={card.card_rank} className="card_picture" />
           <figcaption className="card-description">
             <p className="card-rank">{renderCardRankAndSuit()}</p>
             <p className="location-date">

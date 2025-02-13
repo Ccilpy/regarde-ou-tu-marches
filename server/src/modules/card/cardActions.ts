@@ -32,6 +32,15 @@ const read: RequestHandler = async (req, res, next) => {
   }
 };
 
+const uploadImage: RequestHandler = (req, res, next) => {
+  if (req.file) {
+    const imageUrl = `/card_uploads/${req.file.filename}`;
+    req.body.picture_url = imageUrl;
+    return next();
+  }
+  res.status(400).json({ error: "Aucune image téléchargée." });
+};
+
 const add: RequestHandler = async (req, res, next) => {
   try {
     const {
@@ -56,7 +65,6 @@ const add: RequestHandler = async (req, res, next) => {
       res
         .status(400)
         .json({ error: "Tous les champs obligatoires doivent être remplis." });
-      return;
     }
 
     const insertId = await cardRepository.create(req.body);
@@ -132,4 +140,4 @@ const destroy: RequestHandler = async (req, res, next) => {
   }
 };
 
-export default { browse, read, add, edit, destroy };
+export default { browse, read, add, edit, destroy, uploadImage };
