@@ -6,7 +6,7 @@ CREATE TABLE suit (
 CREATE TABLE card (
     id INT PRIMARY KEY AUTO_INCREMENT,
     username VARCHAR(255) NOT NULL,
-    mail VARCHAR(255) NOT NULL,
+    mail VARCHAR(255) NULL,
     card_rank VARCHAR(50) NOT NULL,
     picture_url TEXT NOT NULL,
     found_date DATE NOT NULL,
