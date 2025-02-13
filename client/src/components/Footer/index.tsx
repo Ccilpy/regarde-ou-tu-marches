@@ -22,19 +22,37 @@ export default function Footer() {
           </li>
           <li>
             {" "}
-            <Link to="/about" className="link-footer">
+            <Link
+              to="/about"
+              className="link-footer"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
               à propos
             </Link>
           </li>
           <li>
             {" "}
-            <Link to="/legal-mentions" className="link-footer">
+            <Link
+              to="/legal-mentions"
+              className="link-footer"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
               mentions légales
             </Link>
           </li>
           <li>
             {" "}
-            <Link to="/privacy-policy" className="link-footer">
+            <Link
+              to="/privacy-policy"
+              className="link-footer"
+              onClick={() => {
+                window.scrollTo({ top: 0, behavior: "smooth" });
+              }}
+            >
               politique de confidentialité
             </Link>
           </li>
